@@ -3,10 +3,52 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from './components/Dashboard';
+import DemoPage from './components/DemoPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+	    <Router>
+      <Switch>
+        <Route path="/machines">
+					<App>
+						<DemoPage pageName="Machines" />
+					</App>
+        </Route>
+        <Route path="/locations">
+					<App>
+						<DemoPage pageName="Locations" />
+					</App>
+        </Route>
+        <Route path="/products">
+					<App>
+						<DemoPage pageName="Products" />
+					</App>
+        </Route>
+        <Route path="/media">
+					<App>
+						<DemoPage pageName="Media" />
+					</App>
+        </Route>
+        <Route path="/user-management">
+					<App>
+						<DemoPage pageName="User Management" />
+					</App>
+        </Route>
+        <Route path="/logout">
+					<App>
+						<DemoPage pageName="Log Out" />
+					</App>
+        </Route>
+        <Route path="/">
+					<App>
+						<Dashboard />
+					</App>
+        </Route>
+      </Switch>
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

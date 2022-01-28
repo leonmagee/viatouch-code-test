@@ -2,7 +2,7 @@
 
 1. Clone repo
 2. cd into project directory, run `npm install` or `yarn install`
-3. run `npm start`
+3. run `npm start` or `yarn start`
 
 This should launch localhost allowing you to test the dashboard.
 

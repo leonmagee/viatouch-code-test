@@ -4,18 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const ReportForm = ({ updateDates }) => {
 
-	// 		format: "M d, Y",
-
 	const [fromDateInput, setFromDateInput] = useState('');
 	const [toDateInput, setToDateInput] = useState('');
 
-	//const [startDate, setStartDate] = useState(new Date());
-
 	const processSubmit = e => {
 		e.preventDefault();
-		console.log('working??? new???');
 		updateDates(fromDateInput, toDateInput);
-		//updateDates('2021-12-01', '2021-12-31');
 	}
 
 	return (<div className="content__item">
@@ -30,17 +24,22 @@ const ReportForm = ({ updateDates }) => {
 					</div>
 					<div className="form__item">
 						<label>From Date</label>
-						{/* <input name="from_date" value={fromDateInput} onChange={e => setFromDateInput(e.target.value)}></input> */}
 					  <DatePicker dateFormat="yyyy-MM-dd" selected={fromDateInput} onChange={(date) => setFromDateInput(date)} />
 					</div>
 					<div className="form__item">
 						<label>To Date</label>
-						{/* <input name="to_date" value={toDateInput} onChange={e => setToDateInput(e.target.value)}></input> */}
 					  <DatePicker dateFormat="yyyy-MM-dd" selected={toDateInput} onChange={(date) => setToDateInput(date)} />
 					</div>
-
 				</div>
 				<button className="primary">Create Report</button>
+				<div className="quick-select-options">
+					<div><h3>Quick Select Options</h3></div>
+					<a href="/">Yesterday</a>
+					<a href="/">Today</a>
+					<a href="/">1 Week</a>
+					<a href="/">6 Months</a>
+					<a href="/">1 Year</a>
+				</div>
 			</form>
 	</div>);
 }

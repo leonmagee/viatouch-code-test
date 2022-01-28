@@ -6,6 +6,7 @@ const ReportData = ({from_date, to_date}) => {
 
 	useEffect(() => {
 		fetchViatouchData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[from_date, to_date]);
 
 	const fetchViatouchData = async () => {
@@ -26,7 +27,7 @@ const ReportData = ({from_date, to_date}) => {
 			})
 		});
 		const json = await res.json();
-		console.log(json);
+		//console.log(json);
 		setData(json.report[0]);
 	}
 

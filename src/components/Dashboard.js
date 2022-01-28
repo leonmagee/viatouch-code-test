@@ -8,7 +8,6 @@ const Dashboard = () => {
 	const [toDate, setToDate] = useState('2021-12-31');
 
 	const updateDates = (fromDate, toDate) => {
-		console.log('working callback?');
 		setFromDate(fromDate);
 		setToDate(toDate);
 	}
