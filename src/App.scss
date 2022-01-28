@@ -1,0 +1,228 @@
+// $background-color: purple;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+$brand-primary: #18DC60;
+$brand-second: #B24C63;
+$brand-third: #357DED;
+$main-bg: #f3f3f3;
+$header-bg: #1F1F2B;
+$header-bg-hover: #151521;
+$header-color: #fff;
+$text-color: #222;
+$logo-width: 13em;
+$sidebar-width: 15em;
+.dashboard {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $main-bg;
+	a {
+		color: $brand-third;
+		&:hover {
+		color: lighten($brand-third, 3%);
+		}
+	}
+	button {
+		padding: 1em;
+		color: #fff;
+		&.primary {
+			background-color: $brand-primary;
+		}
+		&.secondary {
+			background-color: $brand-second;
+		}
+	}
+	.dashboard__header {
+		background-color: $header-bg;
+		color: $header-color;
+		display: flex;
+		.dashboard__header-content {
+			padding: 1em 3.5em;
+			display: flex;
+			flex: 1;
+			justify-content: flex-end;
+			align-items: center;
+			.user-profile {
+				background-color: $brand-primary;
+				font-weight: 600;
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				&:hover {
+					cursor: pointer;
+					background-color: lighten($brand-primary, 5%);
+				}
+			}
+		}
+		img {
+			width: $logo-width;
+			background-color: $header-bg-hover;
+			padding: 1em;
+		}
+	}
+	.dashboard__wrap {
+		display: flex;
+		flex: 1;
+		.dashboard__sidebar {
+				width: $sidebar-width;
+				color: $header-color;
+				background-color: $header-bg;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				ul, li {
+					padding: 0;
+					margin: 0;
+					list-style-type: none;
+					a {
+						font-weight: 600;
+						padding: 1em 0.7em 1em 1.7em;
+						font-size: 1.1em;
+						display: block;
+						color: $header-color;
+						text-decoration: none;
+						&:hover {
+							background-color: $header-bg-hover;
+							color: $brand-primary;
+							i {
+								color: $header-color;
+							}
+						}
+						i {
+							margin-right: 1em;
+							width: 1.2em;
+							text-align: center;
+						}
+					}
+				}
+				.version {
+					font-weight: 600;
+					text-align: center;
+					color: #777;
+					padding-bottom: 2em;
+				}
+		}
+		.dashboard__main {
+			padding: 1.5em;
+			flex: 1;
+			.content {
+				.content__item {
+					h1 {
+						margin: 0 0 0.7em;
+						font-size: 1.9em;
+					}
+					background: #fff;
+					border: 1px solid #ddd;
+					border-radius: 5px;
+					padding: 1.5em 1.5em 1.3em;
+					margin-bottom: 1.5em;
+					.form {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						.form__item {
+							flex: 0 1 46%;
+							margin-bottom: 2em;
+							label {
+								font-weight: 600;
+								color: #222;
+								display: block;
+								font-size: 1.1em;
+								margin-bottom: 0.5em;
+							}
+							input, select {
+								font-size: 1em;
+								padding: 0.2em;
+								height: 2em;
+								width: 100%;
+								-moz-box-sizing: border-box;
+            		-webkit-box-sizing: border-box;
+            		box-sizing: border-box;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.report-data {
+		& > div {
+			display: flex;
+		}
+		.report-data__header {
+			font-weight: 600;
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 0.2em;
+			margin-bottom: 0.4em;
+			//display: flex;
+		//background: tomato;
+		}
+		.report-data__body {
+			//display: flex;
+		//background: cornflowerblue;
+		}
+		.report-data__item {
+			flex: 1;
+			padding: 0.3em 0.2em;
+			&.tiny {
+				flex: 0 1 4%;
+			}
+			&.small {
+				flex: 0 1 6%;
+			}
+			&.medium {
+				flex: 0 1 7%;
+			}
+			&.large {
+				flex: 1 0 15%;
+			}
+		}
+	}
+}
+
+
+
+
+
+// .App {
+//   text-align: center;
+// }
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   background-color: $background-color;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+// 	font-size: 5em;
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
