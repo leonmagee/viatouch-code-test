@@ -1,3 +1,11 @@
+# Installation Instructions
+
+1. Clone repo
+2. cd into project directory, run `npm install` or `yarn install`
+3. run `npm start`
+
+This should launch localhost allowing you to test the dashboard.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
