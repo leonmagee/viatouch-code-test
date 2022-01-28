@@ -22,13 +22,22 @@ $sidebar-width: 15em;
 		}
 	}
 	button {
-		padding: 1em;
+		padding: 0.4em 1.2em;
 		color: #fff;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.2em;
+		font-weight: 600;
 		&.primary {
+			//background-color: darken($brand-primary, 1%);
 			background-color: $brand-primary;
 		}
 		&.secondary {
 			background-color: $brand-second;
+		}
+		&:hover {
+			opacity: 0.9;
+			cursor: pointer;
 		}
 	}
 	.dashboard__header {
@@ -119,11 +128,13 @@ $sidebar-width: 15em;
 					padding: 1.5em 1.5em 1.3em;
 					margin-bottom: 1.5em;
 					.form {
-						display: flex;
-						flex-wrap: wrap;
-						justify-content: space-between;
+						.form__inner {
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: space-between;
+						}
 						.form__item {
-							flex: 0 1 46%;
+							flex: 0 1 31%;
 							margin-bottom: 2em;
 							label {
 								font-weight: 600;

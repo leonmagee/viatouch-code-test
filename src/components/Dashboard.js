@@ -1,18 +1,22 @@
-//import { useEffect } from 'react';
-import Generate from './Generate';
+import { useState } from 'react';
+import ReportForm from './ReportForm';
 import ReportData from './ReportData';
 
 const Dashboard = () => {
 
-	// useEffect(() => {
-	// 	const data = GetData();
-	// 	console.log(data);
-	// },[]);
+	const [fromDate, setFromDate] = useState('2021-06-01');
+	const [toDate, setToDate] = useState('2021-12-31');
+
+	const updateDates = (fromDate, toDate) => {
+		console.log('working callback?');
+		setFromDate(fromDate);
+		setToDate(toDate);
+	}
 
 	return (
 		<div className="content">
-			<Generate />
-			<ReportData />
+			<ReportForm updateDates={updateDates} />
+			<ReportData from_date={fromDate} to_date={toDate} />
 		</div>
 	);
 }

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const ReportData = ({from_date, to_date, grouping, sort}) => {
+const ReportData = ({from_date, to_date}) => {
 
 	const [data, setData] = useState({});
 
 	useEffect(() => {
 		fetchViatouchData();
-	},[]);
+	},[from_date, to_date]);
 
 	const fetchViatouchData = async () => {
 		const url = 'https://viatouchmedia-test.apigee.net/loyalty/reports/sales';
@@ -19,8 +19,8 @@ const ReportData = ({from_date, to_date, grouping, sort}) => {
 				'Authorization': auth,
 			},
 			body: JSON.stringify({
-				"from_date": "2021-06-01",
-				"to_date": "2021-12-31",
+				"from_date": from_date,
+				"to_date": to_date,
 				"top_level_grouping": "client_id",
 				"sort":"items_sold,d"
 			})
@@ -32,7 +32,7 @@ const ReportData = ({from_date, to_date, grouping, sort}) => {
 
 	return (
 	<div className="content__item">
-	<h1>Report Data</h1>
+	<h1>Financial Summary</h1>
 		<div className="report-data">
 			<div className="report-data__header">
 				<div className="report-data__item tiny">Cost</div>
@@ -64,14 +64,3 @@ const ReportData = ({from_date, to_date, grouping, sort}) => {
 }
 
 export default ReportData;
-
-							{/* cost: 2.4
-gross_margin: 9.35
-gross_margin_percent: 79.57
-gross_revenues: 12.83
-items_sold: 24
-revenues: 11.75
-taxes: 1.08
-top_level_group: "fe000721-8c7c-45eb-ac40-50735ed855a1"
-top_level_group_name: "Protothon"
-transaction_count: 20 */}
