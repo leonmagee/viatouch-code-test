@@ -1,30 +1,15 @@
 import { useState } from 'react';
-//import $  from 'jquery';
-//import * from 'jquery-datetimepicker';
-
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
-
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-
-
 
 const ReportForm = ({ updateDates }) => {
 
-	// $.datetimepicker.setLocale("en");
-	// $("#from_date, #to_date").datetimepicker(
-	// 	{
-	// 		timepicker: false,
 	// 		format: "M d, Y",
-	// 	}
-	// );
 
 	const [fromDateInput, setFromDateInput] = useState('');
 	const [toDateInput, setToDateInput] = useState('');
 
-	const [startDate, setStartDate] = useState(new Date());
+	//const [startDate, setStartDate] = useState(new Date());
 
 	const processSubmit = e => {
 		e.preventDefault();
@@ -32,7 +17,6 @@ const ReportForm = ({ updateDates }) => {
 		updateDates(fromDateInput, toDateInput);
 		//updateDates('2021-12-01', '2021-12-31');
 	}
-
 
 	return (<div className="content__item">
 			<h1>Generate Report</h1>
@@ -46,13 +30,14 @@ const ReportForm = ({ updateDates }) => {
 					</div>
 					<div className="form__item">
 						<label>From Date</label>
-						<input name="from_date" value={fromDateInput} onChange={e => setFromDateInput(e.target.value)}></input>
+						{/* <input name="from_date" value={fromDateInput} onChange={e => setFromDateInput(e.target.value)}></input> */}
+					  <DatePicker dateFormat="yyyy-MM-dd" selected={fromDateInput} onChange={(date) => setFromDateInput(date)} />
 					</div>
 					<div className="form__item">
 						<label>To Date</label>
-						<input name="to_date" value={toDateInput} onChange={e => setToDateInput(e.target.value)}></input>
+						{/* <input name="to_date" value={toDateInput} onChange={e => setToDateInput(e.target.value)}></input> */}
+					  <DatePicker dateFormat="yyyy-MM-dd" selected={toDateInput} onChange={(date) => setToDateInput(date)} />
 					</div>
-					    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
 
 				</div>
 				<button className="primary">Create Report</button>
