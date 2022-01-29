@@ -1,12 +1,42 @@
-const ReportData = ({from_date, to_date, data}) => {
-let report_data = <div></div>;
-	if(from_date && to_date) {
-		report_data = (
-			<div>
-		<div className="date-range">
-			<span>{from_date}</span> - <span>{to_date}</span>
-		</div>
+import { useState, useEffect } from 'react';
 
+const ReportData = ({from_date, to_date, data}) => {
+
+	//const [data, setData] = useState({});
+
+	// useEffect(() => {
+	// 	fetchViatouchData();
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// },[from_date, to_date]);
+
+	// const fetchViatouchData = async () => {
+	// 	const url = 'https://viatouchmedia-test.apigee.net/loyalty/reports/sales';
+	// 	const auth = 'Bearer YCXW1zkNJvg4T6aKK9W6sQx2bNrQ';
+	// 	const res = await fetch(url, {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Accept': 'application/json',
+	// 			'Content-Type': 'application/json',
+	// 			'Authorization': auth,
+	// 		},
+	// 		body: JSON.stringify({
+	// 			"from_date":from_date,
+	// 			"to_date":to_date,
+	// 			"top_level_grouping":"client_id",
+	// 			"sort":"items_sold,d"
+	// 		})
+	// 	});
+	// 	const json = await res.json();
+	// 	console.log(json);
+	// 	setData(json.report[0]);
+	// }
+
+	return (
+	<div className="content__item">
+	<h1>Financial Summary</h1>
+	<div className="date-range">
+		{from_date} - {to_date}
+	</div>
 		<div className="report-data">
 			<div className="report-data__header">
 				<div className="report-data__item tiny">Cost</div>
@@ -33,16 +63,6 @@ let report_data = <div></div>;
 				<div className="report-data__item">{data.transaction_count}</div>
 			</div>
 		</div>
-		</div>
-		);
-	}
-
-	return (
-	<div className="content__item">
-
-		<h1>Financial Summary</h1>
-
-		{report_data}
 	</div>
 	);
 }
